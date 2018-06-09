@@ -18,6 +18,8 @@ package com.example.admin.multitypeadapter.library;
 
 import android.support.annotation.NonNull;
 
+import com.example.admin.multitypeadapter.library.onetomany.Linker;
+
 /**
  * An ordered collection to hold the types, binders and linkers.
  *
@@ -25,21 +27,24 @@ import android.support.annotation.NonNull;
  */
 public interface TypePool {
 
-  <T> void register(
-          @NonNull Class<? extends T> clazz,
-          @NonNull ItemViewBinder<T, ?> binder);
+    <T> void register(
+            @NonNull Class<? extends T> clazz,
+            @NonNull ItemViewBinder<T, ?> binder,
+            @NonNull Linker<T> linker);
 
 
-  boolean unregister(@NonNull Class<?> clazz);
+    boolean unregister(@NonNull Class<?> clazz);
 
-  int size();
+    int size();
 
-  int firstIndexOf(@NonNull Class<?> clazz);
+    int firstIndexOf(@NonNull Class<?> clazz);
 
 
-  @NonNull
-  Class<?> getClass(int index);
+    @NonNull
+    Class<?> getClass(int index);
 
-  @NonNull ItemViewBinder<?, ?> getItemViewBinder(int index);
+    @NonNull
+    ItemViewBinder<?, ?> getItemViewBinder(int index);
 
+    Linker<?> getLinker(int index);
 }
