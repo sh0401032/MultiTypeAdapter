@@ -1,10 +1,9 @@
 package com.example.admin.multitypeadapter;
 
+import android.os.Bundle;
 import android.os.Handler;
-import android.os.SystemClock;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
@@ -12,9 +11,6 @@ import com.example.admin.multitypeadapter.library.MultiTypeAdapter;
 import com.example.admin.multitypeadapter.library.onetomany.Linker;
 
 import java.util.ArrayList;
-import java.util.Timer;
-import java.util.TimerTask;
-import java.util.concurrent.ScheduledThreadPoolExecutor;
 
 public class MainActivity extends AppCompatActivity {
 
